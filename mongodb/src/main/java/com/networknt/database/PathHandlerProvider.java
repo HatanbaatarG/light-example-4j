@@ -1,7 +1,7 @@
 package com.networknt.database;
 
 import com.networknt.config.Config;
-import com.networknt.handler.HandlerProvider;
+import com.networknt.server.HandlerProvider;
 import io.undertow.Handlers;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
@@ -10,7 +10,6 @@ import com.networknt.info.ServerInfoGetHandler;
 import com.networknt.database.handler.*;
 
 public class PathHandlerProvider implements HandlerProvider {
-    @Override
     public HttpHandler getHandler() {
         return Handlers.routing()
             .add(Methods.GET, "/v1/queries", new QueriesGetHandler())
